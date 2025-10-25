@@ -1,0 +1,385 @@
+/* === Base Styles === */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+  color: #333;
+}
+
+/* === Splash Screen === */
+#splashScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ff6347;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeOut 1s ease 2s forwards;
+}
+
+.splash-content {
+  text-align: center;
+}
+
+#splashScreen img {
+  height: 80px;
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* === Header === */
+header {
+  background-color: #ff6347;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 1rem;
+}
+
+/* === Navigation === */
+nav {
+  position: relative;
+}
+
+#menuToggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+#navMenu {
+  display: flex;
+  gap: 1rem;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  overflow: hidden;
+}
+
+#navMenu.show {
+  max-height: 300px;
+  opacity: 1;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffe6e0;
+}
+
+/* === Hero Section === */
+.hero {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f8f8f8;
+}
+
+input[type="text"] {
+  padding: 0.5rem;
+  width: 60%;
+  margin-top: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* === Login Section === */
+.login {
+  padding: 2rem;
+  background-color: #fff;
+  border-top: 2px solid #ddd;
+}
+
+.login input {
+  padding: 0.5rem;
+  margin-right: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login button {
+  padding: 0.5rem 1rem;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.login button:hover {
+  background-color: #e5533d;
+}
+
+/* === Featured Restaurants === */
+.featured {
+  padding: 2rem;
+}
+
+#filterCuisine {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.restaurant-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.restaurant-card button {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.restaurant-card button:hover {
+  background-color: #e5533d;
+}
+
+/* === Cart Section === */
+.cart {
+  padding: 2rem;
+  background-color: #f0f0f0;
+  border-top: 2px solid #ddd;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart li {
+  margin-bottom: 0.5rem;
+}
+
+.cart button {
+  margin-left: 1rem;
+  background-color: #ccc;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.cart button:hover {
+  background-color: #bbb;
+}
+
+/* === Checkout Section === */
+.checkout {
+  padding: 2rem;
+  background-color: #fff;
+  border-top: 2px solid #ddd;
+}
+
+.checkout form {
+  max-width: 400px;
+}
+
+.checkout input,
+.checkout select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.checkout button {
+  padding: 0.5rem 1rem;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.checkout button:hover {
+  background-color: #e5533d;
+}
+
+/* === Order Tracking === */
+#orderTracking {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #e8f5e9;
+  border: 1px solid #c8e6c9;
+  border-radius: 4px;
+}
+
+/* === Modal (Menu) === */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #ff6347;
+  color: white;
+  margin-top: 2rem;
+}
+
+/* === Responsive Layout === */
+@media (max-width: 768px) {
+  #menuToggle {
+    display: block;
+  }
+
+  #navMenu {
+    flex-direction: column;
+    background-color: #ff6347;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    padding: 1rem;
+    border-radius: 0 0 8px 8px;
+    max-height: 0;
+    opacity: 0;
+  }
+
+  #navMenu.show {
+    max-height: 300px;
+    opacity: 1;
+  }
+
+  input[type="text"] {
+    width: 90%;
+  }
+
+  .restaurant-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+
+  .checkout form,
+  .login {
+    padding: 1rem;
+  }
+}
+/* === Logo-Only View (Before Login) === */
+#logoOnly {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+#logoOnly .logo {
+  height: 100px;
+}
+
+/* === Site Content (Hidden by Default) === */
+#siteContent {
+  display: none;
+}
+
+/* === Logout Button === */
+#logoutBtn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#logoutBtn:hover {
+  background-color: #333;
+}
+
+/* === Focus Styles for Accessibility === */
+button:focus,
+a:focus,
+input:focus,
+select:focus {
+  outline: 2px solid #ff6347;
+  outline-offset: 2px;
+}
+
+/* === Smooth Transitions === */
+#navMenu,
+#splashScreen {
+  transition: all 30.4s ease;
+}

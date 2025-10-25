@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Food Delivery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div id="splashScreen">
+    <div class="splash-content">
+      <img src="assets/logo.png" alt="Logo" />
+      <h2>Loading Local Food Delivery...</h2>
+    </div>
+  </div>
+
+  <!-- Logo Only (Before Login) -->
+  <div id="logoOnly">
+    <img src="assets/logo.png" alt="Logo" class="logo" />
+  </div>
+
+  <!-- Full Site Content (Hidden Until Login) -->
+  <div id="siteContent">
+    <!-- Header -->
+    <header>
+      <div style="display: flex; align-items: center;">
+        <img src="assets/logo.png" alt="Logo" class="logo" />
+        <h1 style="color: white; margin-left: 1rem;">Local Food Delivery</h1>
+      </div>
+      <nav>
+        <button id="menuToggle">☰</button>
+        <ul id="navMenu">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Restaurants</a></li>
+          <li><a href="#">Cart</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#termsSection">Terms</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Login Section -->
+      <section class="login" id="loginSection">
+        <h2>User Login</h2>
+        <input type="text" id="username" placeholder="Enter your name" />
+        <input type="password" id="password" placeholder="Enter your password" />
+        <button onclick="loginUser()">Login</button>
+        <p id="welcomeMessage"></p>
+        <button id="logoutBtn" style="display:none;">Logout</button>
+      </section>
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <h2>Delicious Local Meals Delivered Fast</h2>
+        <input type="text" placeholder="Search restaurants or cuisines..." />
+      </section>
+
+      <!-- Featured Restaurants -->
+      <section class="featured">
+        <h2>Featured Restaurants</h2>
+        <label for="filterCuisine">Filter by Cuisine:</label>
+        <select id="filterCuisine">
+          <option value="">All</option>
+          <option value="Kenyan">Kenyan</option>
+          <option value="Indian">Indian</option>
+          <option value="Italian">Italian</option>
+        </select>
+        <div class="restaurant-grid" id="restaurantGrid"></div>
+      </section>
+
+      <!-- Cart Section -->
+      <section class="cart" id="cartSection">
+        <h2>Your Cart</h2>
+        <ul id="cartItems"></ul>
+        <p id="cartTotal">Total: KES 0</p>
+      </section>
+
+      <!-- Checkout Section -->
+      <section class="checkout" id="checkoutSection">
+        <h2>Checkout</h2>
+        <form id="checkoutForm">
+          <label for="address">Delivery Address:</label><br />
+          <input type="text" id="address" name="address" required /><br /><br />
+
+          <label for="payment">Payment Method:</label><br />
+          <select id="payment" name="payment" required>
+            <option value="">--Select--</option>
+            <option value="mpesa">M-Pesa</option>
+            <option value="paypal">PayPal</option>
+            <option value="card">Credit/Debit Card</option>
+          </select><br /><br />
+
+          <button type="submit">Place Order</button>
+        </form>
+        <p id="confirmationMessage"></p>
+
+        <div id="orderTracking" style="display:none;">
+          <h3>Track Your Order</h3>
+          <p id="orderStatus"></p>
+        </div>
+      </section>
+
+      <!-- My Orders Section -->
+      <section class="orders" id="ordersSection">
+        <h2>My Orders</h2>
+        <ul id="orderList"></ul>
+      </section>
+
+      <!-- Terms & Conditions Section -->
+      <section class="terms" id="termsSection">
+        <h2>Terms & Conditions / Privacy Policy</h2>
+        
+        <p>We do not collect or store personal data beyond your simulated login. All data is stored locally in your browser.</p>
+        <p>By using this site, you agree to our simulated policies and understand this is a prototype.</p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Local Food Delivery</p>
+    </footer>
+  </div>
+
+  <!-- Menu Modal -->
+  <div id="menuModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" style="float:right; cursor:pointer;">&times;</span>
+      <h3 id="menuTitle"></h3>
+      <ul id="menuItems"></ul>
+    </div>
+  </div>
+
+  <link rel="stylesheet" href="style.css" />
+<script src="script.js" defer></script>
+
+
+</body>
+</html>
+
